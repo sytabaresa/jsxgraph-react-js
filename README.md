@@ -12,6 +12,8 @@ npm install --save jsxgraph-react-js
 
 ## Usage
 
+View a demo: [https://sytabaresa.github.io/jsxgraph-react-js](https://sytabaresa.github.io/jsxgraph-react-js).
+
 ### With a javascript function:
 ```jsx
 import React, { Component } from 'react'

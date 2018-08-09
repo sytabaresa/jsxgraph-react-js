@@ -1,6 +1,6 @@
 {
   "name": "jsxgraph-react-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React component library for use Javascript or JessieCode for make JSXGraph boards",
   "author": "sytabaresa",
   "license": "MIT",
@@ -58,7 +58,6 @@
     "dist"
   ],
   "dependencies": {
-    "jsxgraph": "^0.99.7",
-    "lodash": "^4.17.10"
+    "jsxgraph": "^0.99.7"
   }
 }

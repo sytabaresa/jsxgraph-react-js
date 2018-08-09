@@ -16,7 +16,7 @@ export default class JXGBoard extends Component {
   }
   constructor(props) {
     super(props);
-    this.id = uniqueId("boards-");
+    this.id =  'board_' + Math.random().toString(36).substr(2, 9);;
     this.state = { board: null };
     this.defaultStyle = { width: 500, height: 500 };
     this.defauflboardAttributes = {
@@ -32,7 +32,8 @@ export default class JXGBoard extends Component {
   //called only after initial render
   componentDidMount() {
     //now that div exists, create new JSXGraph board with it
-    let attributes = assign(this.defauflboardAttributes, this.props.boardAttributes || {});
+    let attributes = {};
+    Object.assign(attributes, this.defauflboardAttributes, this.props.boardAttributes || {});
     let board = JXG.JSXGraph.initBoard(this.id, attributes);
     if (this.props.jessieCode) {
       board.jc.parse(this.props.logic);
