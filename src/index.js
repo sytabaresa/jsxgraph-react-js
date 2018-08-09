@@ -1,22 +1,57 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import uniqueId from 'lodash/uniqueId';
+import assign from 'lodash/assign';
 
-import styles from './styles.css'
+import JXG from 'jsxgraph';
 
-export default class ExampleComponent extends Component {
+export default class JXGBoard extends Component {
   static propTypes = {
-    text: PropTypes.string
+    style: PropTypes.object,
+    logic: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.string]).isRequired,
+    boardAttributes: PropTypes.func,
+    jessieCode: PropTypes.bool
+  }
+  constructor(props) {
+    super(props);
+    this.id = uniqueId("boards-");
+    this.state = { board: null };
+    this.defaultStyle = { width: 500, height: 500 };
+    this.defauflboardAttributes = {
+      boundingbox: [-1, 1, 1, -1], keepaspectratio: true, axis: true
+    }
   }
 
+  //called right before child lifecycles, passes context object to all children
+  getChildContext() {
+    return { board: this.state.board };
+  }
+
+  //called only after initial render
+  componentDidMount() {
+    //now that div exists, create new JSXGraph board with it
+    let attributes = assign(this.defauflboardAttributes, this.props.boardAttributes || {});
+    let board = JXG.JSXGraph.initBoard(this.id, attributes);
+    if (this.props.jessieCode) {
+      board.jc.parse(this.props.logic);
+    } else {
+      this.props.logic(board);
+    }
+    this.setState({
+      board: board
+    });
+  }
+
+  //called only if shouldComponentUpdate returns true
+  //for rendering the JSXGraph board div and any child elements
   render() {
-    const {
-      text
-    } = this.props
+    let style = assign(this.defaultStyle, this.props.style || {});
 
     return (
-      <div className={styles.test}>
-        Example Component: {text}
+      <div id={this.id} className="jxgbox" style={style}>
       </div>
-    )
+    );
   }
 }

@@ -1,7 +1,7 @@
-import ExampleComponent from './'
+import JXGBoard from './'
 
-describe('ExampleComponent', () => {
+describe('JXGBoard', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(JXGBoard).toBeTruthy()
   })
 })
