@@ -1,10 +1,10 @@
 {
   "name": "jsxgraph-react-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React component library for use Javascript or JessieCode for make JSXGraph boards",
   "author": "sytabaresa",
   "license": "MIT",
-  "repository": "sytabaresa/jsxgraph-react",
+  "repository": "sytabaresa/jsxgraph-react-js",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

@@ -73,10 +73,13 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>JSXGraph with javascript function:</h1>
+        <h1>JSXGraph with javascript function and style:</h1>
         <JXGBoard
           logic={logicJS}
           boardAttributes={{ axis: true, boundingbox: [-12, 10, 12, -10] }}
+          style={{
+            border: "3px solid red"
+          }}
         />
         <h1>JSXGraph with JessieCode string:</h1>
         <JXGBoard

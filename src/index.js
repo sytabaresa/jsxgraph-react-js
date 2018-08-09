@@ -19,9 +19,7 @@ export default class JXGBoard extends Component {
     this.id =  'board_' + Math.random().toString(36).substr(2, 9);;
     this.state = { board: null };
     this.defaultStyle = { width: 500, height: 500 };
-    this.defauflboardAttributes = {
-      boundingbox: [-1, 1, 1, -1], keepaspectratio: true, axis: true
-    }
+    this.defauflboardAttributes = {}
   }
 
   //called right before child lifecycles, passes context object to all children

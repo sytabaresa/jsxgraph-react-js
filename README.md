@@ -11,8 +11,15 @@ npm install --save jsxgraph-react-js
 ```
 
 ## Usage
-
 View a demo: [https://sytabaresa.github.io/jsxgraph-react-js](https://sytabaresa.github.io/jsxgraph-react-js).
+
+- default style for a JXGBoard is 
+```css
+{
+  width: 500;
+  height: 500;
+}
+```
 
 ### With a javascript function:
 ```jsx
@@ -41,6 +48,9 @@ class Example extends Component {
         <JXGBoard
           logic={logicJS}
           boardAttributes={{ axis: true, boundingbox: [-12, 10, 12, -10] }}
+          style={{
+            border: "3px solid red"
+          }}
         />
     )
   }
@@ -111,6 +121,9 @@ class Example extends Component {
     return (
         <JXGBoard
           logic={logicJC}
+          style={{
+            border: "3px solid red"
+          }}
           jessieCode
         />
     )
