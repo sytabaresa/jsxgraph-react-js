@@ -15,12 +15,15 @@ export default class JXGBoard extends Component {
     boardAttributes: PropTypes.object,
     jessieCode: PropTypes.bool
   }
+  static childContextTypes = {
+    board: PropTypes.object,
+  }
   constructor(props) {
     super(props)
     this.id = 'board_' + Math.random().toString(36).substr(2, 9)
     this.state = { board: null }
     this.defaultStyle = { width: 500, height: 500 }
-    this.defauflboardAttributes = {}
+    this.defaultBoardAttributes = {}
   }
 
   // called right before child lifecycles, passes context object to all children
@@ -32,7 +35,7 @@ export default class JXGBoard extends Component {
   componentDidMount() {
     // now that div exists, create new JSXGraph board with it
     let attributes = {}
-    Object.assign(attributes, this.defauflboardAttributes, this.props.boardAttributes || {})
+    Object.assign(attributes, this.defaultBoardAttributes, this.props.boardAttributes || {})
     let board = JXG.JSXGraph.initBoard(this.id, attributes)
     if (this.props.jessieCode) {
       board.jc.parse(this.props.logic)
