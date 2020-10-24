@@ -36,7 +36,9 @@ export default class JXGBoard extends Component {
     // now that div exists, create new JSXGraph board with it
     let attributes = {}
     Object.assign(attributes, this.defaultBoardAttributes, this.props.boardAttributes || {})
-    JXG.Options.text.cssStyle = 'font-family: Palatino';
+    if (this.props.jxgInit) {
+      this.props.jxgInit(JXG);
+    }
     let board = JXG.JSXGraph.initBoard(this.id, attributes)
     if (this.props.jessieCode) {
       board.jc.parse(this.props.logic)

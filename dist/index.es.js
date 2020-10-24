@@ -1461,7 +1461,9 @@ var JXGBoard = function (_Component) {
       // now that div exists, create new JSXGraph board with it
       var attributes = {};
       Object.assign(attributes, this.defaultBoardAttributes, this.props.boardAttributes || {});
-      jsxgraphcore.Options.text.cssStyle = 'font-family: Palatino';
+      if (this.props.jxgInit) {
+        this.props.jxgInit(jsxgraphcore);
+      }
       var board = jsxgraphcore.JSXGraph.initBoard(this.id, attributes);
       if (this.props.jessieCode) {
         board.jc.parse(this.props.logic);
