@@ -1,6 +1,6 @@
 {
   "name": "@sswatson/jsxgraph-react-js",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "React component library for use Javascript or JessieCode for make JSXGraph boards",
   "author": "sytabaresa",
   "license": "MIT",
