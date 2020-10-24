@@ -1,10 +1,10 @@
 {
-  "name": "jsxgraph-react-js",
-  "version": "1.0.4",
+  "name": "@sswatson/jsxgraph-react-js",
+  "version": "1.0.5",
   "description": "React component library for use Javascript or JessieCode for make JSXGraph boards",
   "author": "sytabaresa",
   "license": "MIT",
-  "repository": "sytabaresa/jsxgraph-react-js",
+  "repository": "sswatson/jsxgraph-react-js",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -33,24 +33,24 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "cross-env": "^5.1.4",
-    "eslint": "^5.0.1",
+    "cross-env": "^5.2.1",
+    "eslint": "^5.16.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-react": "^6.0.0",
-    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-standard": "^3.1.0",
     "gh-pages": "^1.2.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-scripts": "^1.1.4",
     "rollup": "^0.62.0",
     "rollup-plugin-babel": "^3.0.7",
-    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^1.6.2",
     "rollup-plugin-url": "^1.4.0"
   },
@@ -58,6 +58,6 @@
     "dist"
   ],
   "dependencies": {
-    "jsxgraph": "^0.99.7"
+    "jsxgraph": "^1.1.0"
   }
 }
