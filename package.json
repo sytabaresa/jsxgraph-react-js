@@ -58,6 +58,6 @@
     "dist"
   ],
   "dependencies": {
-    "jsxgraph": "^1.1.0"
+    "jsxgraph": "^1.2.1"
   }
 }

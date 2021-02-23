@@ -37,7 +37,7 @@ export default class JXGBoard extends Component {
     let attributes = {}
     Object.assign(attributes, this.defaultBoardAttributes, this.props.boardAttributes || {})
     if (this.props.jxgInit) {
-      this.props.jxgInit(JXG);
+      this.props.jxgInit(JXG)
     }
     let board = JXG.JSXGraph.initBoard(this.id, attributes)
     if (this.props.jessieCode) {
