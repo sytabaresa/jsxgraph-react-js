@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 // import uniqueId from 'lodash/uniqueId'
 import assign from 'lodash/assign'
 
-import JXG from 'jsxgraph'
+import JXG from '@sswatson/jsxgraph'
 
 export default class JXGBoard extends Component {
   static propTypes = {
@@ -44,6 +44,9 @@ export default class JXGBoard extends Component {
       board.jc.parse(this.props.logic)
     } else {
       this.props.logic(board)
+    }
+    if (this.props.boardInit) {
+      this.props.boardInit(board);
     }
     this.setState({
       board: board
